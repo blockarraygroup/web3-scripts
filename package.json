@@ -1,0 +1,27 @@
+{
+  "name": "some-web3-scripts",
+  "version": "1.0.0",
+  "description": "Some web3 scripts",
+  "main": "confirmTxRoot.js",
+  "dependencies": {
+    "ethereumjs-tx": "^1.3.4",
+    "ethereumjs-util": "^5.2.0",
+    "merkle": "^0.6.0",
+    "rlp": "^2.0.0",
+    "web3": "^1.0.0-beta.34"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockarraygroup/some-web3-scripts.git"
+  },
+  "author": "Austin Hester",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/blockarraygroup/some-web3-scripts/issues"
+  },
+  "homepage": "https://github.com/blockarraygroup/some-web3-scripts#readme"
+}
