@@ -3,7 +3,7 @@ const util = require('ethereumjs-util');
 const tx = require('ethereumjs-tx');
 
 var web3 = new Web3(new Web3.providers
-	.HttpProvider("https://ropsten.infura.io/BYVTTM95Gm2IOQFxuu5g"));
+	.HttpProvider("https://rinkeby.infura.io/BYVTTM95Gm2IOQFxuu5g"));
 
 if (process.argv[2] == undefined) {
 	var privateKey = new Buffer(
@@ -21,7 +21,7 @@ function makeRawTx(nonce) {
 		gasPrice: web3.utils.toHex(20000000000),
 		gasLimit: web3.utils.toHex(100000),
 		to: '0x28c7fA16aE91d2Adb6a31F45fb33EeaD33BD42AE',
-		value: web3.utils.toHex(100000000),
+		value: web3.utils.toHex(1000000),
 		data: '0x0'
 	};
 }
@@ -33,6 +33,12 @@ async function trySend(nonce) {
 	transaction.sign(privateKey);
 	var serialTx = transaction.serialize();
 
+	const sha256 = web3.utils.keccak256;
+	console.log("TX:\n", transaction);
+	console.log("SERIALTX:\n", util.bufferToHex(serialTx));
+	console.log("HASH:\n", sha256(serialTx));
+	// This generates the transaction hash before the tx is confirmed
+
 	web3.eth.sendSignedTransaction('0x' + serialTx.toString('hex'))
 	.on('receipt', console.log)
 	.on('error', console.error)
@@ -41,7 +47,7 @@ async function trySend(nonce) {
 }
 
 
-trySend(0);
+trySend(2);
 //trySend(4);
 
 

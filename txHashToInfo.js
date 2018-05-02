@@ -3,7 +3,7 @@ const util = require('ethereumjs-util');
 const tx = require('ethereumjs-tx');
 
 var web3 = new Web3(new Web3.providers
-	.HttpProvider("https://ropsten.infura.io/BYVTTM95Gm2IOQFxuu5g"));
+	.HttpProvider("https://rinkeby.infura.io/BYVTTM95Gm2IOQFxuu5g"));
 
 if (process.argv[2] == undefined) {
 	var txHash = 

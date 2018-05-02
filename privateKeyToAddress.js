@@ -2,7 +2,8 @@ const Web3 = require('web3');
 const util = require('ethereumjs-util');
 
 var web3 = new Web3(new Web3.providers
-	.HttpProvider("https://ropsten.infura.io/BYVTTM95Gm2IOQFxuu5g"));
+	.HttpProvider("https://rinkeby.infura.io/BYVTTM95Gm2IOQFxuu5g"));
+	// yea this too
 
 if (process.argv[2] == undefined) {
 	var privateKey =
